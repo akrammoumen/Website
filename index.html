@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOBEK MEDIA</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+
+    <script type="text/javascript">
+      const { motion } = window['framerMotion'];
+
+      function App() {
+        return (
+          React.createElement("div", {className:"min-h-screen font-sans"}, 
+            // Header
+            React.createElement("header", {className:"bg-white shadow-sm sticky top-0 z-50"}, 
+              React.createElement("div", {className:"max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"}, 
+                React.createElement("div", {className:"flex items-center gap-4"}, 
+                  React.createElement("img", {src:"mobekmedia.jpg", alt:"MOBEK MEDIA", className:"w-16 h-16 rounded-full ring-4 ring-yellow-400/90 shadow-lg"}),
+                  React.createElement("div", null, 
+                    React.createElement("h1", {className:"text-xl font-bold"},"MOBEK MEDIA"),
+                    React.createElement("p", {className:"text-sm opacity-75"},"Meta Ads — Results That Scare Your Competitors")
+                  )
+                ),
+                React.createElement("nav", {className:"hidden md:flex gap-6"}, 
+                  React.createElement("a", {href:"#services", className:"hover:underline"},"Services"),
+                  React.createElement("a", {href:"#work", className:"hover:underline"},"Work"),
+                  React.createElement("a", {href:"#faq", className:"hover:underline"},"FAQ"),
+                  React.createElement("a", {href:"#about", className:"hover:underline"},"About"),
+                  React.createElement("a", {href:"mailto:hello@mobekmedia.com", className:"px-4 py-2 bg-black text-white rounded-md"},"Contact")
+                )
+              )
+            ),
+
+            // Hero
+            React.createElement("section",{className:"max-w-6xl mx-auto px-6 py-20"},
+              React.createElement(motion.div,{
+                initial:{opacity:0,y:40},whileInView:{opacity:1,y:0},transition:{duration:0.8}
+              },
+                React.createElement("h2",{className:"text-4xl font-extrabold"},"We Scale Growth With Fearless Meta Ads"),
+                React.createElement("p",{className:"mt-6 text-lg opacity-80"},
+                  "MOBEK MEDIA specializes in high-velocity Meta advertising that focuses on converting qualified customers and driving dramatic ROI."
+                ),
+                React.createElement("div",{className:"mt-8 flex gap-4"},
+                  React.createElement("a",{href:"mailto:hello@mobekmedia.com",className:"px-6 py-3 bg-yellow-400 rounded-md font-semibold"},"Get a Strategy Email"),
+                  React.createElement("a",{href:"#work",className:"px-6 py-3 border rounded-md"},"See Our Work")
+                )
+              )
+            ),
+
+            // Services
+            React.createElement("section",{id:"services",className:"bg-white py-16"},
+              React.createElement("div",{className:"max-w-6xl mx-auto px-6"},
+                React.createElement("h3",{className:"text-3xl font-bold"},"What We Do"),
+                React.createElement("p",{className:"mt-3 opacity-75"},"We focus deeply on Meta Ads — creative, audiences, funnels, and scale.")
+              )
+            ),
+
+            // FAQ
+            React.createElement("section",{id:"faq",className:"bg-white py-16"},
+              React.createElement("div",{className:"max-w-6xl mx-auto px-6"},
+                React.createElement("h3",{className:"text-3xl font-bold"},"FAQ"),
+                React.createElement("div",{className:"mt-6"},
+                  React.createElement("h4",{className:"font-semibold"},"How fast will I see results?"),
+                  React.createElement("p",{className:"opacity-75"},"Typically within 30-60 days.")
+                )
+              )
+            ),
+
+            // About
+            React.createElement("section",{id:"about",className:"bg-white py-16"},
+              React.createElement("div",{className:"max-w-6xl mx-auto px-6"},
+                React.createElement("h3",{className:"text-3xl font-bold"},"About MOBEK MEDIA"),
+                React.createElement("p",{className:"mt-3 opacity-75"},"Small, nimble team with deep focus on Meta ads and scaling strategies.")
+              )
+            ),
+
+            // Footer
+            React.createElement("footer",{className:"bg-gray-900 text-white py-12"},
+              React.createElement("div",{className:"max-w-6xl mx-auto px-6 text-center"},
+                React.createElement("p",null,"Email: ",
+                  React.createElement("a",{href:"mailto:hello@mobekmedia.com",className:"underline"},"hello@mobekmedia.com")
+                ),
+                React.createElement("p",{className:"mt-4 opacity-70"},"© "+new Date().getFullYear()+" MOBEK MEDIA")
+              )
+            ),
+
+            // Floating CTA
+            React.createElement("a",{
+              href:"mailto:hello@mobekmedia.com",
+              className:"fixed bottom-6 right-6 px-5 py-3 bg-yellow-400 text-black font-semibold rounded-full shadow-lg hover:bg-yellow-500 transition"
+            },"Contact Us")
+          )
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(React.createElement(App));
+    </script>
+  </body>
+</html>
