@@ -4,441 +4,615 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOBEK MEDIA - وكالة متخصصة في إعلانات Meta</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: '#FFD700',
-                        dark: '#1a202c',
-                        light: '#f7fafc'
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Framer Motion -->
-    <script src="https://unpkg.com/framer-motion@9.5.1/dist/framer-motion.js"></script>
-    
-    <!-- React and ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    
-    <!-- Babel for JSX parsing -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+        :root {
+            --gold: #FFD700;
+            --dark: #1a202c;
+            --light: #f7fafc;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
             font-family: 'Tajawal', sans-serif;
+            color: var(--dark);
+            background-color: white;
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
         
-        .gold-border {
-            border: 2px solid #FFD700;
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
         
-        .hero-bg {
+        /* Header Styles */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            width: 160px;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            padding: 4px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 9rem;
+            padding-bottom: 5rem;
             background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
         }
         
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 2.5rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .btn-primary {
+            background-color: var(--gold);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ecc94b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--dark);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Sections Common Styles */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+        }
+        
+        .gold-text {
+            color: var(--gold);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-number {
+            width: 50px;
+            height: 50px;
+            background-color: #fefcbf;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Work Section */
+        .work {
+            background-color: #f7fafc;
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .work-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .work-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .work-result {
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1.5rem 0;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: #4a5568;
+            padding-top: 1rem;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: #f7fafc;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            width: 140px;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            padding: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact {
+            text-align: center;
+        }
+        
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #2d3748;
+            color: #a0aec0;
+        }
+        
+        /* Floating CTA */
         .floating-cta {
-            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--gold);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .floating-cta:hover {
+            background-color: #ecc94b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
-<body class="bg-white text-dark">
-    <div id="root"></div>
-    
-    <script type="text/babel">
-        const { useState, useEffect } = React;
-        const motion = window.framerMotion.motion;
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <img src="https://via.placeholder.com/160x60/FFFFFF/FFD700?text=MOBEK+MEDIA" alt="MOBEK MEDIA" class="logo">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#work">أعمالنا</a></li>
+                    <li><a href="#faq">الأسئلة الشائعة</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+                <button class="mobile-menu-btn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="fade-in">نحوّل إعلانات <span class="gold-text">Meta</span> إلى محركات نمو</h1>
+            <p class="fade-in delay-1">نحن نخصص كل جهودنا في وكالتنا لتحقيق أقصى استفادة من إعلانات فيسبوك وإنستجرام لتحقيق نمو مستدام لأعمالك</p>
+            <div class="hero-buttons fade-in delay-2">
+                <a href="mailto:hello@mobekmedia.com" class="btn btn-primary">اطلب استراتيجية مجانية</a>
+                <a href="#work" class="btn btn-secondary">شاهد أعمالنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">تركيزنا الكامل على <span class="gold-text">إعلانات ميتا</span></h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-number">1</div>
+                    <h3>إبداعات مذهلة</h3>
+                    <p>نصنع محتوى إعلاني جذاب ومؤثر يتناسب مع هوية علامتك التجارية ويحفز التفاعل</p>
+                </div>
+                <div class="service-card fade-in delay-1">
+                    <div class="service-number">2</div>
+                    <h3>استهداف دقيق</h3>
+                    <p>نصل للجمهور المناسب باستخدام أدوات الاستهداف المتقدمة التي توفرها منصة ميتا</p>
+                </div>
+                <div class="service-card fade-in delay-2">
+                    <div class="service-number">3</div>
+                    <h3>مسارات تحويل محكمة</h3>
+                    <p>نصمم تجربة مستخدم متكاملة تؤدي إلى زيادة التحويلات وتحقيق أهدافك التسويقية</p>
+                </div>
+                <div class="service-card fade-in delay-3">
+                    <div class="service-number">4</div>
+                    <h3>توسع مدروس</h3>
+                    <p>نزيد من ميزانيتك الإعلانية بشكل تدريجي مع الحفاظ على أداء الحملات وكفاءتها</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work">
+        <div class="container">
+            <h2 class="section-title">قصص نجاح عملائنا</h2>
+            <div class="work-grid">
+                <div class="work-card fade-in">
+                    <h3>متجر إلكتروني للرياضة</h3>
+                    <p class="work-result">زيادة المبيعات بنسبة 240% خلال 3 أشهر</p>
+                    <p>إستراتيجية إعلانية متكاملة ركزت على إعادة استهداف المهتمين باللياقة البدنية</p>
+                </div>
+                <div class="work-card fade-in delay-1">
+                    <h3>علامة تجارية فاخرة</h3>
+                    <p class="work-result">انخفاض تكلفة التحويل بنسبة 35%</p>
+                    <p>استهداف متطور للجمهور المميز مع محتوى إعلاني عالي الجودة</p>
+                </div>
+                <div class="work-card fade-in delay-2">
+                    <h3>تطبيق تعليمي</h3>
+                    <p class="work-result">تحقيق 15,000 تثبيت في 30 يوماً</p>
+                    <p>زيادة التثبيتات بنسبة 180% مع تحسين معدلات الاحتفاظ بالمستخدمين</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>كم يستغرق من الوقت لرؤية النتائج الأولية؟</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>عادةً ما نرى نتائج أولية خلال 2-4 أسابيع، لكن هذا يعتمد على عوامل مثل الميزانية والمنافسة في مجال عملك.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-1">
+                    <div class="faq-question">
+                        <span>هل أحتاج إلى ميزانية كبيرة للبدء مع MOBEK MEDIA؟</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعمل مع ميزانيات مختلفة بدءًا من 1000 دولار شهريًا للإعلانات. نناقش أهدافك ونقترح الميزانية المناسبة لتحقيقها.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-2">
+                    <div class="faq-question">
+                        <span>هل تقدمون خدمات تسويقية أخرى بجانب إعلانات Meta؟</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نركز حصريًا على إعلانات Meta (Facebook وInstagram) لنتمكن من تقديم أفضل النتائج في هذا التخصص.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-content">
+            <h2 class="section-title">من نحن</h2>
+            <p class="fade-in">نحن فريق صغير ومرن، نؤمن بأن التخصص هو مفتاح التميز. بدلاً من تقديم عشرات الخدمات بشكل متوسط، اخترنا أن نكون الأفضل في مجال واحد: إعلانات Meta.</p>
+            <p class="fade-in delay-1">نهجنا يعتمد على البيانات والاختبار المستمر، مع التركيز على تحقيق النتائج الملموسة لعملائنا. نحن نفهم تعقيدات خوارزميات Meta ونستخدم هذه المعرفة لصالح علامتك التجارية.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <img src="https://via.placeholder.com/140x50/1a202c/FFD700?text=MOBEK+MEDIA" alt="MOBEK MEDIA" class="footer-logo">
+                    <p>نحوّل إعلانات Meta إلى محركات نمو لعملك</p>
+                </div>
+                <div class="footer-contact">
+                    <p class="gold-text">تواصل معنا</p>
+                    <a href="mailto:hello@mobekmedia.com">hello@mobekmedia.com</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 MOBEK MEDIA. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="mailto:hello@mobekmedia.com" class="floating-cta">اتصل بنا</a>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
         
-        // مكون الهيدر
-        const Header = () => {
-            const [isScrolled, setIsScrolled] = useState(false);
-            
-            useEffect(() => {
-                const handleScroll = () => {
-                    setIsScrolled(window.scrollY > 10);
-                };
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                answer.classList.toggle('active');
                 
-                window.addEventListener('scroll', handleScroll);
-                return () => window.removeEventListener('scroll', handleScroll);
-            }, []);
-            
-            return React.createElement(motion.header, {
-                className: `fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`,
-                initial: { y: -100 },
-                animate: { y: 0 },
-                transition: { duration: 0.6 }
-            },
-                React.createElement('div', { className: 'container mx-auto px-4 flex justify-between items-center' },
-                    React.createElement(motion.div, {
-                        className: 'w-32',
-                        whileHover: { scale: 1.05 },
-                        transition: { type: "spring", stiffness: 400, damping: 10 }
-                    },
-                        React.createElement('img', {
-                            src: 'https://via.placeholder.com/128x48/FFFFFF/FFD700?text=MOBEK+MEDIA',
-                            alt: 'MOBEK MEDIA',
-                            className: 'gold-border rounded p-1'
-                        })
-                    ),
-                    
-                    React.createElement('nav', { className: 'hidden md:block' },
-                        React.createElement('ul', { className: 'flex space-x-8' },
-                            ['الخدمات', 'أعمالنا', 'الأسئلة الشائعة', 'من نحن', 'اتصل بنا'].map((item, index) =>
-                                React.createElement('li', { key: index },
-                                    React.createElement('a', {
-                                        href: `#${item}`,
-                                        className: 'text-dark hover:text-gold font-medium transition-colors duration-300'
-                                    }, item)
-                                )
-                            )
-                        )
-                    ),
-                    
-                    React.createElement('button', {
-                        className: 'md:hidden text-dark'
-                    },
-                        React.createElement('svg', {
-                            className: 'w-6 h-6',
-                            fill: 'none',
-                            stroke: 'currentColor',
-                            viewBox: '0 0 24 24'
-                        },
-                            React.createElement('path', {
-                                strokeLinecap: 'round',
-                                strokeLinejoin: 'round',
-                                strokeWidth: '2',
-                                d: 'M4 6h16M4 12h16M4 18h16'
-                            })
-                        )
-                    )
-                )
-            );
-        };
+                const icon = this.querySelector('span:last-child');
+                icon.textContent = answer.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
         
-        // مكون الهيرو
-        const HeroSection = () => {
-            return React.createElement('section', { className: 'hero-bg pt-32 pb-20' },
-                React.createElement('div', { className: 'container mx-auto px-4 text-center' },
-                    React.createElement(motion.h1, {
-                        className: 'text-4xl md:text-5xl lg:text-6xl font-bold mb-6',
-                        initial: { opacity: 0, y: 20 },
-                        animate: { opacity: 1, y: 0 },
-                        transition: { duration: 0.7 }
-                    },
-                        'نحوّل إعلانات ',
-                        React.createElement('span', { className: 'text-gold' }, 'Meta'),
-                        ' إلى محركات نمو'
-                    ),
-                    
-                    React.createElement(motion.p, {
-                        className: 'text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto',
-                        initial: { opacity: 0, y: 20 },
-                        animate: { opacity: 1, y: 0 },
-                        transition: { duration: 0.7, delay: 0.2 }
-                    },
-                        'نحن نخصص كل جهودنا في وكالتنا لتحقيق أقصى استفادة من إعلانات فيسبوك وإنستجرام لتحقيق نمو مستدام لأعمالك'
-                    ),
-                    
-                    React.createElement(motion.div, {
-                        className: 'flex flex-col sm:flex-row justify-center gap-4',
-                        initial: { opacity: 0, y: 20 },
-                        animate: { opacity: 1, y: 0 },
-                        transition: { duration: 0.7, delay: 0.4 }
-                    },
-                        React.createElement('a', {
-                            href: 'mailto:hello@mobekmedia.com',
-                            className: 'bg-gold hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300'
-                        }, 'اطلب استراتيجية مجانية'),
-                        
-                        React.createElement('a', {
-                            href: '#أعمالنا',
-                            className: 'border-2 border-dark hover:bg-dark hover:text-white font-bold py-3 px-8 rounded-full transition-colors duration-300'
-                        }, 'شاهد أعمالنا')
-                    )
-                )
-            );
-        };
-        
-        // مكون الخدمات
-        const ServicesSection = () => {
-            const services = [
-                {
-                    title: 'إبداعات مذهلة',
-                    description: 'نصنع محتوى إعلاني جذاب ومؤثر يتناسب مع هوية علامتك التجارية ويحفز التفاعل'
-                },
-                {
-                    title: 'استهداف دقيق',
-                    description: 'نصل للجمهور المناسب باستخدام أدوات الاستهداف المتقدمة التي توفرها منصة ميتا'
-                },
-                {
-                    title: 'مسارات تحويل محكمة',
-                    description: 'نصمم تجربة مستخدم متكاملة تؤدي إلى زيادة التحويلات وتحقيق أهدافك التسويقية'
-                },
-                {
-                    title: 'توسع مدروس',
-                    description: 'نزيد من ميزانيتك الإعلانية بشكل تدريجي مع الحفاظ على أداء الحملات وكفاءتها'
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
                 }
-            ];
-            
-            return React.createElement('section', { id: 'الخدمات', className: 'py-20 bg-white' },
-                React.createElement('div', { className: 'container mx-auto px-4' },
-                    React.createElement(motion.h2, {
-                        className: 'text-3xl md:text-4xl font-bold text-center mb-16',
-                        initial: { opacity: 0 },
-                        whileInView: { opacity: 1 },
-                        transition: { duration: 0.7 },
-                        viewport: { once: true }
-                    },
-                        'تركيزنا الكامل على ',
-                        React.createElement('span', { className: 'text-gold' }, 'إعلانات ميتا')
-                    ),
-                    
-                    React.createElement('div', { className: 'grid md:grid-cols-2 lg:grid-cols-4 gap-8' },
-                        services.map((service, index) =>
-                            React.createElement(motion.div, {
-                                key: index,
-                                className: 'bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300',
-                                initial: { opacity: 0, y: 20 },
-                                whileInView: { opacity: 1, y: 0 },
-                                transition: { duration: 0.5, delay: index * 0.1 },
-                                viewport: { once: true }
-                            },
-                                React.createElement('div', { className: 'w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4' },
-                                    React.createElement('span', { className: 'text-gold font-bold' }, index + 1)
-                                ),
-                                React.createElement('h3', { className: 'text-xl font-bold mb-2' }, service.title),
-                                React.createElement('p', { className: 'text-gray-600' }, service.description)
-                            )
-                        )
-                    )
-                )
-            );
-        };
+            });
+        }
         
-        // مكون الأعمال
-        const WorkSection = () => {
-            const caseStudies = [
-                {
-                    title: 'متجر إلكتروني للرياضة',
-                    result: 'زيادة المبيعات بنسبة 240% خلال 3 أشهر',
-                    description: 'إستراتيجية إعلانية متكاملة ركزت على إعادة استهداف المهتمين باللياقة البدنية'
-                },
-                {
-                    title: 'علامة تجارية فاخرة',
-                    result: 'انخفاض تكلفة التحويل بنسبة 35%',
-                    description: 'استهداف متطور للجمهور المميز مع محتوى إعلاني عالي الجودة'
-                },
-                {
-                    title: 'تطبيق تعليمي',
-                    result: 'تحقيق 15,000 تثبيت في 30 يوماً',
-                    description: 'زيادة التثبيتات بنسبة 180% مع تحسين معدلات الاحتفاظ بالمستخدمين'
-                }
-            ];
-            
-            return React.createElement('section', { id: 'أعمالنا', className: 'py-20 bg-gray-100' },
-                React.createElement('div', { className: 'container mx-auto px-4' },
-                    React.createElement(motion.h2, {
-                        className: 'text-3xl md:text-4xl font-bold text-center mb-16',
-                        initial: { opacity: 0 },
-                        whileInView: { opacity: 1 },
-                        transition: { duration: 0.7 },
-                        viewport: { once: true }
-                    }, 'قصص نجاح عملائنا'),
-                    
-                    React.createElement('div', { className: 'grid md:grid-cols-2 lg:grid-cols-3 gap-8' },
-                        caseStudies.map((project, index) =>
-                            React.createElement(motion.div, {
-                                key: index,
-                                className: 'bg-white p-6 rounded-lg shadow-md',
-                                initial: { opacity: 0, y: 20 },
-                                whileInView: { opacity: 1, y: 0 },
-                                transition: { duration: 0.5, delay: index * 0.1 },
-                                viewport: { once: true }
-                            },
-                                React.createElement('h3', { className: 'text-xl font-bold mb-2' }, project.title),
-                                React.createElement('p', { className: 'text-gold font-semibold mb-4' }, project.result),
-                                React.createElement('p', { className: 'text-gray-600' }, project.description)
-                            )
-                        )
-                    )
-                )
-            );
-        };
-        
-        // مكون الأسئلة الشائعة
-        const FAQSection = () => {
-            const [activeIndex, setActiveIndex] = useState(null);
-            
-            const faqs = [
-                {
-                    question: 'كم يستغرق من الوقت لرؤية النتائج الأولية؟',
-                    answer: 'عادةً ما نرى نتائج أولية خلال 2-4 أسابيع، لكن هذا يعتمد على عوامل مثل الميزانية والمنافسة في مجال عملك.'
-                },
-                {
-                    question: 'هل أحتاج إلى ميزانية كبيرة للبدء مع MOBEK MEDIA؟',
-                    answer: 'نعمل مع ميزانيات مختلفة بدءًا من 1000 دولار شهريًا للإعلانات. نناقش أهدافك ونقترح الميزانية المناسبة لتحقيقها.'
-                },
-                {
-                    question: 'هل تقدمون خدمات تسويقية أخرى بجانب إعلانات Meta؟',
-                    answer: 'نركز حصريًا على إعلانات Meta (Facebook وInstagram) لنتمكن من تقديم أفضل النتائج في هذا التخصص.'
-                }
-            ];
-            
-            const toggleFAQ = (index) => {
-                setActiveIndex(activeIndex === index ? null : index);
-            };
-            
-            return React.createElement('section', { id: 'الأسئلة الشائعة', className: 'py-20 bg-white' },
-                React.createElement('div', { className: 'container mx-auto px-4 max-w-3xl' },
-                    React.createElement(motion.h2, {
-                        className: 'text-3xl md:text-4xl font-bold text-center mb-16',
-                        initial: { opacity: 0 },
-                        whileInView: { opacity: 1 },
-                        transition: { duration: 0.7 },
-                        viewport: { once: true }
-                    }, 'الأسئلة الشائعة'),
-                    
-                    React.createElement('div', { className: 'space-y-4' },
-                        faqs.map((faq, index) =>
-                            React.createElement(motion.div, {
-                                key: index,
-                                className: 'border-b border-gray-200 pb-4',
-                                initial: { opacity: 0, y: 10 },
-                                whileInView: { opacity: 1, y: 0 },
-                                transition: { duration: 0.3, delay: index * 0.1 },
-                                viewport: { once: true }
-                            },
-                                React.createElement('button', {
-                                    onClick: () => toggleFAQ(index),
-                                    className: 'flex justify-between items-center w-full text-left font-semibold text-lg py-2 focus:outline-none'
-                                },
-                                    faq.question,
-                                    React.createElement('svg', {
-                                        className: `w-5 h-5 transform transition-transform ${activeIndex === index ? 'rotate-180' : ''}`,
-                                        fill: 'none',
-                                        stroke: 'currentColor',
-                                        viewBox: '0 0 24 24'
-                                    },
-                                        React.createElement('path', {
-                                            strokeLinecap: 'round',
-                                            strokeLinejoin: 'round',
-                                            strokeWidth: '2',
-                                            d: 'M19 9l-7 7-7-7'
-                                        })
-                                    )
-                                ),
-                                activeIndex === index && React.createElement(motion.div, {
-                                    initial: { opacity: 0, height: 0 },
-                                    animate: { opacity: 1, height: 'auto' },
-                                    transition: { duration: 0.3 },
-                                    className: 'pt-2 text-gray-600'
-                                }, faq.answer)
-                            )
-                        )
-                    )
-                )
-            );
-        };
-        
-        // مكون من نحن
-        const AboutSection = () => {
-            return React.createElement('section', { id: 'من نحن', className: 'py-20 bg-gray-100' },
-                React.createElement('div', { className: 'container mx-auto px-4 max-w-3xl text-center' },
-                    React.createElement(motion.h2, {
-                        className: 'text-3xl md:text-4xl font-bold mb-8',
-                        initial: { opacity: 0, y: 20 },
-                        whileInView: { opacity: 1, y: 0 },
-                        transition: { duration: 0.5 },
-                        viewport: { once: true }
-                    }, 'من نحن'),
-                    
-                    React.createElement(motion.p, {
-                        className: 'text-lg text-gray-600 mb-6',
-                        initial: { opacity: 0, y: 20 },
-                        whileInView: { opacity: 1, y: 0 },
-                        transition: { duration: 0.5, delay: 0.1 },
-                        viewport: { once: true }
-                    }, 'نحن فريق صغير ومرن، نؤمن بأن التخصص هو مفتاح التميز. بدلاً من تقديم عشرات الخدمات بشكل متوسط، اخترنا أن نكون الأفضل في مجال واحد: إعلانات Meta.'),
-                    
-                    React.createElement(motion.p, {
-                        className: 'text-lg text-gray-600',
-                        initial: { opacity: 0, y: 20 },
-                        whileInView: { opacity: 1, y: 0 },
-                        transition: { duration: 0.5, delay: 0.2 },
-                        viewport: { once: true }
-                    }, 'نهجنا يعتمد على البيانات والاختبار المستمر، مع التركيز على تحقيق النتائج الملموسة لعملائنا. نحن نفهم تعقيدات خوارزميات Meta ونستخدم هذه المعرفة لصالح علامتك التجارية.')
-                )
-            );
-        };
-        
-        // مكون الفوتر
-        const Footer = () => {
-            return React.createElement('footer', { id: 'اتصل بنا', className: 'bg-dark text-white py-12' },
-                React.createElement('div', { className: 'container mx-auto px-4' },
-                    React.createElement('div', { className: 'flex flex-col md:flex-row justify-between items-center' },
-                        React.createElement('div', { className: 'mb-6 md:mb-0' },
-                            React.createElement('img', {
-                                src: 'https://via.placeholder.com/120x40/1a202c/FFD700?text=MOBEK+MEDIA',
-                                alt: 'MOBEK MEDIA',
-                                className: 'gold-border rounded p-1 mb-4'
-                            }),
-                            React.createElement('p', { className: 'text-gray-400' }, 'نحوّل إعلانات Meta إلى محركات نمو لعملك')
-                        ),
-                        
-                        React.createElement('div', { className: 'text-center md:text-right' },
-                            React.createElement('p', { className: 'text-gold font-semibold mb-2' }, 'تواصل معنا'),
-                            React.createElement('a', {
-                                href: 'mailto:hello@mobekmedia.com',
-                                className: 'text-xl font-semibold hover:text-gold transition-colors duration-300'
-                            }, 'hello@mobekmedia.com')
-                        )
-                    ),
-                    
-                    React.createElement('div', { className: 'border-t border-gray-800 mt-8 pt-8 text-center text-gray-400' },
-                        React.createElement('p', null, `© ${new Date().getFullYear()} MOBEK MEDIA. جميع الحقوق محفوظة.`)
-                    )
-                )
-            );
-        };
-        
-        // زر الاتصال العائم
-        const FloatingCTA = () => {
-            return React.createElement(motion.a, {
-                href: 'mailto:hello@mobekmedia.com',
-                className: 'fixed bottom-6 right-6 bg-gold hover:bg-yellow-500 text-white font-bold py-3 px-6 rounded-full floating-cta z-40',
-                initial: { opacity: 0, scale: 0.5 },
-                animate: { opacity: 1, scale: 1 },
-                transition: { duration: 0.5, delay: 1 }
-            }, 'اتصل بنا');
-        };
-        
-        // المكون الرئيسي
-        const App = () => {
-            return React.createElement(React.Fragment, null,
-                React.createElement(Header),
-                React.createElement(HeroSection),
-                React.createElement(ServicesSection),
-                React.createElement(WorkSection),
-                React.createElement(FAQSection),
-                React.createElement(AboutSection),
-                React.createElement(Footer),
-                React.createElement(FloatingCTA)
-            );
-        };
-        
-        // تقديم التطبيق
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(React.createElement(App));
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
     </script>
 </body>
 </html>
