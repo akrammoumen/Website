@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOBEK MEDIA - متخصصون في تأثيث المنازل وتجهيز المطابخ</title>
+    <title>MOBEK MEDIA - وكالة متخصصة في إعلانات Meta للتأثيث المنزلي وتجهيز المطابخ</title>
+    <meta name="description" content="MOBEK MEDIA - وكالة تسويق رقمية متخصصة في إعلانات Meta (فيسبوك وإنستجرام) لقطاع التأثيث المنزلي وتجهيز المطابخ. نعمل على زيادة مبيعاتك وتحقيق نمو مستدام">
+    <meta name="keywords" content="إعلانات فيسبوك, إعلانات انستجرام, تسويق التأثيث المنزلي, تسويق المطابخ, إعلانات Meta, تسويق رقمي, زيادة المبيعات">
+    <meta name="author" content="MOBEK MEDIA">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MOBEK MEDIA - وكالة متخصصة في إعلانات Meta">
+    <meta property="og:description" content="متخصصون في إعلانات Meta لقطاع التأثيث المنزلي وتجهيز المطابخ. نحول إعلاناتك إلى محركات نمو">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mobekmedia.com">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mobekmedia.com">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0a3367;
-            --secondary: #e3ad55;
+            --primary-blue: #0a3367;
+            --primary-gold: #e3ad55;
             --dark: #1a202c;
             --light: #f7fafc;
             --transition: all 0.3s ease;
@@ -61,7 +74,7 @@
         
         .logo {
             width: 160px;
-            border: 2px solid #FFD700; /* إبقاء الإطار ذهبي كما طلبت */
+            border: 2px solid var(--primary-gold);
             border-radius: 4px;
             padding: 4px;
         }
@@ -80,7 +93,7 @@
         }
         
         .nav-menu a:hover {
-            color: var(--secondary);
+            color: var(--primary-blue);
         }
         
         .mobile-menu-btn {
@@ -101,13 +114,13 @@
         }
         
         .hero::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             right: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
             background-size: cover;
             opacity: 0.1;
             z-index: 0;
@@ -151,22 +164,23 @@
         }
         
         .btn-primary {
-            background-color: var(--primary);
+            background-color: var(--primary-blue);
             color: white;
         }
         
         .btn-primary:hover {
             background-color: #082a54;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 51, 103, 0.3);
         }
         
         .btn-secondary {
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
         }
         
         .btn-secondary:hover {
-            background-color: var(--primary);
+            background-color: var(--primary-gold);
             color: white;
             transform: translateY(-2px);
         }
@@ -183,12 +197,12 @@
             margin-bottom: 3rem;
         }
         
-        .primary-text {
-            color: var(--primary);
+        .blue-text {
+            color: var(--primary-blue);
         }
         
-        .secondary-text {
-            color: var(--secondary);
+        .gold-text {
+            color: var(--primary-gold);
         }
         
         /* Services Section */
@@ -204,7 +218,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
-            text-align: center;
+            border-top: 4px solid var(--primary-blue);
         }
         
         .service-card:hover {
@@ -212,25 +226,26 @@
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(10, 51, 103, 0.1);
+        .service-number {
+            width: 50px;
+            height: 50px;
+            background-color: #e6f0ff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.8rem;
-            color: var(--primary);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
         }
         
         .service-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
+            color: var(--primary-blue);
         }
         
-        /* Work Section - Updated for Home Furnishing */
+        /* Work Section - Improved for Furniture & Kitchens */
         .work {
             background-color: #f7fafc;
         }
@@ -243,37 +258,79 @@
         
         .work-card {
             background-color: white;
+            padding: 2rem;
             border-radius: 8px;
-            overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .work-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-gold));
         }
         
         .work-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .work-image {
+            width: 100%;
             height: 200px;
+            background-color: #e2e8f0;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #4a5568;
             background-size: cover;
             background-position: center;
-        }
-        
-        .work-content {
-            padding: 1.5rem;
         }
         
         .work-card h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            color: var(--primary-blue);
         }
         
         .work-result {
-            color: var(--secondary);
+            color: var(--primary-gold);
             font-weight: 700;
             margin-bottom: 1rem;
-            display: block;
+            font-size: 1.1rem;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0a2a5c 100%);
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            text-align: center;
+            gap: 2rem;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            font-weight: 600;
         }
         
         /* FAQ Section */
@@ -306,6 +363,59 @@
             display: block;
         }
         
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f8fafc;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: var(--primary-gold);
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background-color: #e2e8f0;
+            border-radius: 50%;
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #4a5568;
+        }
+        
         /* About Section */
         .about {
             background-color: #f7fafc;
@@ -325,7 +435,7 @@
         
         /* Footer */
         footer {
-            background-color: var(--primary);
+            background-color: var(--dark);
             color: white;
             padding: 4rem 0 2rem;
         }
@@ -339,7 +449,7 @@
         
         .footer-logo {
             width: 140px;
-            border: 1px solid #FFD700; /* إبقاء الإطار ذهبي */
+            border: 1px solid var(--primary-gold);
             border-radius: 4px;
             padding: 4px;
             margin-bottom: 1rem;
@@ -350,7 +460,7 @@
         }
         
         .footer-contact a {
-            color: var(--secondary);
+            color: var(--primary-gold);
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 700;
@@ -363,7 +473,7 @@
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #1e3a5c;
+            border-top: 1px solid #2d3748;
             color: #a0aec0;
         }
         
@@ -372,7 +482,7 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background-color: var(--primary);
+            background-color: var(--primary-blue);
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 50px;
@@ -381,12 +491,19 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             z-index: 999;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .floating-cta:hover {
             background-color: #082a54;
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .whatsapp-icon {
+            font-size: 1.2rem;
         }
         
         /* Animations */
@@ -451,6 +568,13 @@
             .section-title {
                 font-size: 1.8rem;
             }
+            
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -458,11 +582,12 @@
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
-            <img src="https://akrammoumen.github.io/Website/mobek_agency.png" alt="MOBEK MEDIA" class="logo">
+            <img src="https://raw.githubusercontent.com/akrammoumen/Website/main/mobek_agency.png" alt="MOBEK MEDIA - وكالة متخصصة في إعلانات Meta للتأثيث المنزلي وتجهيز المطابخ" class="logo">
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#services">الخدمات</a></li>
                     <li><a href="#work">أعمالنا</a></li>
+                    <li><a href="#testimonials">آراء العملاء</a></li>
                     <li><a href="#faq">الأسئلة الشائعة</a></li>
                     <li><a href="#about">من نحن</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
@@ -475,11 +600,35 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1 class="fade-in">نحوّل <span class="primary-text">بيوتكم</span> إلى <span class="secondary-text">جنان</span> من الراحة والجمال</h1>
-            <p class="fade-in delay-1">متخصصون في تأثيث المنازل وتجهيز المطابخ بأحدث التصاميم وأجود المواد لنساعدكم في تحقيق منزل أحلامكم</p>
+            <h1 class="fade-in">نحوّل إعلانات <span class="blue-text">Meta</span> إلى محركات نمو <span class="gold-text">للتأثيث المنزلي وتجهيز المطابخ</span></h1>
+            <p class="fade-in delay-1">نحن نخصص كل جهودنا في وكالتنا لتحقيق أقصى استفادة من إعلانات فيسبوك وإنستجرام لتحقيق نمو مستدام لأعمال التأثيث المنزلي وتجهيز المطابخ</p>
             <div class="hero-buttons fade-in delay-2">
-                <a href="mailto:hello@mobekmedia.com" class="btn btn-primary">اطلب استشارة مجانية</a>
+                <a href="mailto:hello@mobekmedia.com" class="btn btn-primary">اطلب استراتيجية مجانية</a>
                 <a href="#work" class="btn btn-secondary">شاهد أعمالنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <h3>+50</h3>
+                    <p>عميل في قطاع التأثيث</p>
+                </div>
+                <div class="stat-item fade-in delay-1">
+                    <h3>+200%</h3>
+                    <p>متوسط زيادة المبيعات</p>
+                </div>
+                <div class="stat-item fade-in delay-2">
+                    <h3>5</h3>
+                    <p>سنوات من الخبرة</p>
+                </div>
+                <div class="stat-item fade-in delay-3">
+                    <h3>100%</h3>
+                    <p>تخصص في إعلانات Meta</p>
+                </div>
             </div>
         </div>
     </section>
@@ -487,102 +636,102 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">خدماتنا <span class="primary-text">المتميزة</span></h2>
+            <h2 class="section-title">تركيزنا الكامل على <span class="blue-text">إعلانات ميتا للتأثيث والمطابخ</span></h2>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">🏠</div>
-                    <h3>تأثيث المنازل الكامل</h3>
-                    <p>نقدم حلولاً متكاملة لتأثيث جميع غرف المنزل بدءاً من التصميم وحتى التنفيذ</p>
+                    <div class="service-number">1</div>
+                    <h3>إبداعات مخصصة للتأثيث</h3>
+                    <p>نصنع محتوى إعلاني جذاب يعرض منتجات التأثيث والمطابخ بأفضل صورة، مع التركيز على الجودة والتفاصيل التي تهم العملاء</p>
                 </div>
                 <div class="service-card fade-in delay-1">
-                    <div class="service-icon">👨‍🍳</div>
-                    <h3>تجهيز المطابخ المتكامل</h3>
-                    <p>تصميم وتنفيذ مطابخ عصرية بتقنيات حديثة تناسب احتياجاتكم اليومية</p>
+                    <div class="service-number">2</div>
+                    <h3>استهداف محكم للعملاء المحتملين</h3>
+                    <p>نصل للعملاء المهتمين بالتأثيث المنزلي وتجهيز المطابخ باستخدام أدوات الاستهداف المتقدمة التي توفرها منصة ميتا</p>
                 </div>
                 <div class="service-card fade-in delay-2">
-                    <div class="service-icon">🛋️</div>
-                    <h3>تأثيث غرف المعيشة</h3>
-                    <p>اختيار قطع الأثاث المناسبة التي تجمع بين الراحة والجمال والوظيفية</p>
+                    <div class="service-number">3</div>
+                    <h3>مسارات تحويل مخصصة</h3>
+                    <p>نصمم تجربة مستخدم متكاملة تؤدي إلى زيادة التحويلات وتحقيق أهدافك التسويقية في قطاع التأثيث والمطابخ</p>
                 </div>
                 <div class="service-card fade-in delay-3">
-                    <div class="service-icon">🛏️</div>
-                    <h3>تأثيث غرف النوم</h3>
-                    <p>تصميم مساحات نوم هادئة ومريحة تعزز الاسترخاء والراحة</p>
+                    <div class="service-number">4</div>
+                    <h3>توسع مدروس ومضمون</h3>
+                    <p>نزيد من ميزانيتك الإعلانية بشكل تدريجي مع الحفاظ على أداء الحملات وكفاءتها لتحقيق أقصى عائد على الاستثمار</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Section - Updated for Home Furnishing -->
+    <!-- Work Section -->
     <section id="work" class="work">
         <div class="container">
-            <h2 class="section-title">أحدث <span class="primary-text">أعمالنا</span></h2>
+            <h2 class="section-title">نجاحاتنا في <span class="blue-text">قطاع التأثيث وتجهيز المطابخ</span></h2>
             <div class="work-grid">
                 <div class="work-card fade-in">
-                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="work-content">
-                        <h3>تأثيث فيلا فاخرة بالرياض</h3>
-                        <span class="work-result">اكتمل خلال 45 يومًا</span>
-                        <p>تأثيث كامل لفيلا مساحة 600م² بتصميم عصري يجمع بين الفخامة والوظيفية</p>
+                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <!-- يمكن استبدال هذا بخلفية حقيقية -->
                     </div>
+                    <h3>متجر أثاث فاخر</h3>
+                    <p class="work-result">زيادة المبيعات بنسبة 240% خلال 4 أشهر</p>
+                    <p>إستراتيجية إعلانية متكاملة ركزت على استهداف الأسر ذات الدخل المرتفع المهتمة بالأثاث الفاخر والمطابخ المتميزة</p>
                 </div>
                 <div class="work-card fade-in delay-1">
-                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="work-content">
-                        <h3>تجهيز مطبخ عصري بجدة</h3>
-                        <span class="work-result">اكتمل خلال 30 يومًا</span>
-                        <p>تصميم وتنفيذ مطبخ بتقنيات ذكية ومساحات تخزين مبتكرة</p>
+                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <!-- يمكن استبدال هذا بخلفية حقيقية -->
                     </div>
+                    <h3>شركة تجهيز مطابخ مدمجة</h3>
+                    <p class="work-result">انخفاض تكلفة التحويل بنسبة 35%</p>
+                    <p>استهداف متطور للعملاء الراغبين في تجديد مطابخهم مع عرض نماذج حقيقية ونماذج ثلاثية الأبعاد لجذب الانتباه</p>
                 </div>
                 <div class="work-card fade-in delay-2">
-                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="work-content">
-                        <h3>تأثيث شقة عصرية بالدمام</h3>
-                        <span class="work-result">اكتمل خلال 25 يومًا</span>
-                        <p>تأثيث شقة مساحة 180م² بتصميم معاصر يناسب العائلات الشابة</p>
+                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <!-- يمكن استبدال هذا بخلفية حقيقية -->
                     </div>
+                    <h3>متجر مفروشات منزلية</h3>
+                    <p class="work-result">تحقيق 500 عملية بيع في أول شهرين</p>
+                    <p>حملة إعلانية مكثفة لعرض تشكيلة الموسم مع استراتيجية إعادة استهداف للعملاء المهتمين بمفروشات المنازل الجديدة</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- آراء العملاء -->
-    <section class="testimonials" style="padding: 5rem 0; background-color: white;">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2 class="section-title">ماذا يقول <span class="primary-text">عملاؤنا</span>؟</h2>
-            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="testimonial-card" style="background: #f7fafc; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative;">
-                    <div class="quote-icon" style="position: absolute; top: 1rem; right: 1rem; font-size: 2rem; color: #e3ad55;">"</div>
-                    <p style="margin-bottom: 1.5rem; font-style: italic;">لقد حولت MOBEK MEDIA منزلي إلى تحفة فنية. الاهتمام بالتفاصيل وجودة العمل كانت استثنائية.</p>
-                    <div class="client-info" style="display: flex; align-items: center;">
-                        <div class="avatar" style="width: 50px; height: 50px; background-color: #e2e8f0; border-radius: 50%; margin-left: 1rem; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #4a5568;">م</div>
+            <h2 class="section-title">ماذا يقول عملاؤنا في <span class="blue-text">قطاع التأثيث والمطابخ</span>؟</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p style="margin-bottom: 1.5rem; font-style: italic;">لقد ساعدتني MOBEK MEDIA على زيادة مبيعات متجر الأثاث الخاص بي بنسبة 200% خلال 3 أشهر فقط. فريق محترف يفهم احتياجات قطاع التأثيث بشكل ممتاز.</p>
+                    <div class="client-info">
+                        <div class="avatar">م</div>
                         <div>
                             <h4 style="margin-bottom: 0.2rem;">محمد السعدي</h4>
-                            <p style="color: #718096; font-size: 0.9rem;">فيلا بالرياض</p>
+                            <p style="color: #718096; font-size: 0.9rem;">مالك متجر أثاث فاخر</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card" style="background: #f7fafc; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative;">
-                    <div class="quote-icon" style="position: absolute; top: 1rem; right: 1rem; font-size: 2rem; color: #e3ad55;">"</div>
-                    <p style="margin-bottom: 1.5rem; font-style: italic;">مطبخي الجديد أصبح مصدر فخري. التصميم العملي والجمالي تجاوز توقعاتي بكثير.</p>
-                    <div class="client-info" style="display: flex; align-items: center;">
-                        <div class="avatar" style="width: 50px; height: 50px; background-color: #e2e8f0; border-radius: 50%; margin-left: 1rem; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #4a5568;">س</div>
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="quote-icon">"</div>
+                    <p style="margin-bottom: 1.5rem; font-style: italic;">كنت أبحث عن وكالة متخصصة في التسويق لشركة تجهيز مطابخ ولم أجد أفضل من MOBEK MEDIA. انخفضت تكلفة التحويل بنسبة 35% وزادت الاستفسارات بنسبة 150%.</p>
+                    <div class="client-info">
+                        <div class="avatar">س</div>
                         <div>
                             <h4 style="margin-bottom: 0.2rem;">سارة العبدالله</h4>
-                            <p style="color: #718096; font-size: 0.9rem;">شقة بجدة</p>
+                            <p style="color: #718096; font-size: 0.9rem;">مديرة تسويق في شركة مطابخ</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card" style="background: #f7fafc; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative;">
-                    <div class="quote-icon" style="position: absolute; top: 1rem; right: 1rem; font-size: 2rem; color: #e3ad55;">"</div>
-                    <p style="margin-bottom: 1.5rem; font-style: italic;">فريق محترف ومتابعة ممتازة. أنصح بشدة بالتعامل معهم لأي مشروع تأثيث.</p>
-                    <div class="client-info" style="display: flex; align-items: center;">
-                        <div class="avatar" style="width: 50px; height: 50px; background-color: #e2e8f0; border-radius: 50%; margin-left: 1rem; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #4a5568;">ع</div>
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="quote-icon">"</div>
+                    <p style="margin-bottom: 1.5rem; font-style: italic;">فريق MOBEK MEDيا محترف جداً ويتابع الحملات بشكل يومي. حققنا أكثر من 500 عملية بيع لمنتجاتنا المنزلية خلال شهرين فقط بفضل استراتيجيتهم المميزة.</p>
+                    <div class="client-info">
+                        <div class="avatar">ع</div>
                         <div>
                             <h4 style="margin-bottom: 0.2rem;">علي محمد</h4>
-                            <p style="color: #718096; font-size: 0.9rem;">منزل بالدمام</p>
+                            <p style="color: #718096; font-size: 0.9rem;">مالك علامة تجارية للمفروشات</p>
                         </div>
                     </div>
                 </div>
@@ -593,33 +742,33 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">الأسئلة <span class="primary-text">الشائعة</span></h2>
+            <h2 class="section-title">الأسئلة الشائعة حول <span class="blue-text">تسويق التأثيث والمطابخ</span></h2>
             <div class="faq-container">
                 <div class="faq-item fade-in">
                     <div class="faq-question">
-                        <span>كم يستغرق مشروع التأثيث الكامل للمنزل؟</span>
+                        <span>كم يستغرق من الوقت لرؤية النتائج الأولية في قطاع التأثيث؟</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>يختلف الوقت حسب حجم المشروع، لكن في المتوسط يستغرق تأثيث شقة كاملة من 20-30 يومًا، وتأثيث فيلا كاملة من 45-60 يومًا.</p>
+                        <p>عادةً ما نرى نتائج أولية خلال 2-4 أسابيع، لكن في قطاع التأثيث والمطابخ قد نلاحظ استفسارات مبكرة بسبب الطبيعة الموسمية لهذا القطاع.</p>
                     </div>
                 </div>
                 <div class="faq-item fade-in delay-1">
                     <div class="faq-question">
-                        <span>هل تقدمون ضمان على المواد والأعمال؟</span>
+                        <span>هل أحتاج إلى ميزانية كبيرة للبدء مع MOBEK MEDIA في مجال التأثيث؟</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>نعم، نقدم ضمانًا على جميع المواد المستخدمة يصل إلى 5 سنوات، وضمان على الأعمال التنفيذية لمدة سنتين.</p>
+                        <p>نعمل مع ميزانيات مختلفة بدءًا من 1000 دولار شهريًا للإعلانات. نناقش أهدافك ونقترح الميزانية المناسبة لتحقيقها في قطاع التأثيث والمطابخ.</p>
                     </div>
                 </div>
                 <div class="faq-item fade-in delay-2">
                     <div class="faq-question">
-                        <span>هل يمكنني اختيار التصميم بنفسي؟</span>
+                        <span>ما الذي يميزكم في تسويق منتجات التأثيث والمطابخ تحديداً؟</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>بالطبع، نقدم استشارات تصميم مجانية ونعمل معكم خطوة بخطوة لتحقيق التصميم الذي يحلمون به.</p>
+                        <p>نمتلك خبرة متخصصة في فهم سلوك العملاء المهتمين بالتأثيث المنزلي وتجهيز المطابخ، ونعرف كيفية عرض المنتجات بشكل يجذب انتباههم ويحفزهم على الشراء.</p>
                     </div>
                 </div>
             </div>
@@ -629,9 +778,9 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container about-content">
-            <h2 class="section-title">من <span class="primary-text">نحن</span></h2>
-            <p class="fade-in">نحن فريق متخصص في تأثيث المنازل وتجهيز المطابخ، نمتلك خبرة تزيد عن 10 سنوات في تحويل المساحات إلى بيوت جميلة وعملية.</p>
-            <p class="fade-in delay-1">نهتم بكل التفاصيل الصغيرة ونؤمن بأن المنزل ليس مجرد مكان للسكن، بل هو انعكاس لشخصيتكم وأسلوب حياتكم.</p>
+            <h2 class="section-title">من نحن في <span class="blue-text">MOBEK MEDIA</span></h2>
+            <p class="fade-in">نحن فريق متخصص في تسويق قطاع التأثيث المنزلي وتجهيز المطابخ عبر إعلانات Meta. نؤمن بأن التخصص هو مفتاح التميز، ولهذا ركزنا جهودنا على هذا القطاع المهم.</p>
+            <p class="fade-in delay-1">نهجنا يعتمد على فهم عميق لسلوك العملاء في قطاع التأثيث، والاستفادة من البيانات والاختبار المستمر لتحقيق أفضل النتائج لعملائنا. نحن نعرف كيف نعرض منتجاتك بشكل يجذب انتباه العملاء المحتملين.</p>
         </div>
     </section>
 
@@ -640,12 +789,13 @@
         <div class="container">
             <div class="footer-container">
                 <div>
-                    <img src="https://akrammoumen.github.io/Website/mobek_agency.png" alt="MOBEK MEDIA" class="footer-logo">
-                    <p>متخصصون في تأثيث المنازل وتجهيز المطابخ</p>
+                    <img src="https://raw.githubusercontent.com/akrammoumen/Website/main/mobek_agency.png" alt="MOBEK MEDIA - وكالة متخصصة في إعلانات Meta للتأثيث المنزلي وتجهيز المطابخ" class="footer-logo">
+                    <p>نحوّل إعلانات Meta إلى محركات نمو لقطاع التأثيث والمطابخ</p>
                 </div>
                 <div class="footer-contact">
-                    <p class="secondary-text">تواصل معنا</p>
+                    <p class="gold-text">تواصل معنا</p>
                     <a href="mailto:hello@mobekmedia.com">hello@mobekmedia.com</a>
+                    <p style="margin-top: 0.5rem;">+966 123 456 789</p>
                 </div>
             </div>
             <div class="copyright">
@@ -655,7 +805,9 @@
     </footer>
 
     <!-- Floating CTA -->
-    <a href="mailto:hello@mobekmedia.com" class="floating-cta">اتصل بنا</a>
+    <a href="https://wa.me/966123456789" class="floating-cta">
+        <span class="whatsapp-icon">📱</span> اتصل بنا
+    </a>
 
     <script>
         // Header scroll effect
@@ -706,6 +858,28 @@
         
         window.addEventListener('scroll', checkFade);
         window.addEventListener('load', checkFade);
+        
+        // Structured Data for SEO
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "MarketingAgency",
+            "name": "MOBEK MEDIA",
+            "description": "وكالة تسويق رقمية متخصصة في إعلانات Meta (فيسبوك وإنستجرام) لقطاع التأثيث المنزلي وتجهيز المطابخ",
+            "url": "https://mobekmedia.com",
+            "telephone": "+966-123-456-789",
+            "email": "hello@mobekmedia.com",
+            "areaServed": "السعودية والوطن العربي",
+            "serviceType": "تسويق إلكتروني، إعلانات فيسبوك، إعلانات انستجرام",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "SA"
+            }
+        };
+        
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(structuredData);
+        document.head.appendChild(script);
     </script>
 </body>
 </html>
