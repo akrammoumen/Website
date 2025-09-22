@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOBEK MEDIA - وكالة متخصصة في إعلانات Meta للتأثيث المنزلي وتجهيز المطابخ</title>
-    <meta name="description" content="MOBEK MEDIA - وكالة تسويق رقمية متخصصة في إعلانات Meta (فيسبوك وإنستجرام) لقطاع التأثيث المنزلي وتجهيز المطابخ. نعمل على زيادة مبيعاتك وتحقيق نمو مستدام">
-    <meta name="keywords" content="إعلانات فيسبوك, إعلانات انستجرام, تسويق التأثيث المنزلي, تسويق المطابخ, إعلانات Meta, تسويق رقمي, زيادة المبيعات">
+    <title>MOBEK MEDIA - Meta Ads Specialist for Home Furniture & Kitchen Businesses</title>
+    <meta name="description" content="MOBEK MEDIA - Digital marketing agency specialized in Meta Ads (Facebook & Instagram) for home furniture and kitchen businesses. We help you increase sales and achieve sustainable growth">
+    <meta name="keywords" content="Facebook ads, Instagram ads, furniture marketing, kitchen marketing, Meta ads, digital marketing, increase sales">
     <meta name="author" content="MOBEK MEDIA">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="MOBEK MEDIA - وكالة متخصصة في إعلانات Meta">
-    <meta property="og:description" content="متخصصون في إعلانات Meta لقطاع التأثيث المنزلي وتجهيز المطابخ. نحول إعلاناتك إلى محركات نمو">
+    <meta property="og:title" content="MOBEK MEDIA - Meta Ads Specialist Agency">
+    <meta property="og:description" content="Specialized in Meta Ads for home furniture and kitchen businesses. We turn your ads into growth engines">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mobekmedia.com">
     
@@ -19,7 +19,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #0a3367;
@@ -36,11 +36,12 @@
         }
         
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Inter', sans-serif;
             color: var(--dark);
             background-color: white;
             line-height: 1.6;
             scroll-behavior: smooth;
+            padding-top: 80px; /* Prevent header overlap */
         }
         
         .container {
@@ -59,21 +60,24 @@
             background-color: white;
             transition: var(--transition);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 80px;
+            display: flex;
+            align-items: center;
         }
         
         header.scrolled {
-            padding: 0.5rem 0;
+            height: 70px;
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            width: 100%;
         }
         
         .logo {
-            width: 120px; /* تصغير حجم الشعار */
+            width: 120px;
             transition: var(--transition);
         }
         
@@ -97,7 +101,7 @@
             width: 0;
             height: 2px;
             bottom: -5px;
-            right: 0;
+            left: 0;
             background-color: var(--primary-gold);
             transition: var(--transition);
         }
@@ -121,8 +125,7 @@
         
         /* Hero Section */
         .hero {
-            padding-top: 9rem;
-            padding-bottom: 5rem;
+            padding: 6rem 0 5rem;
             background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
             position: relative;
             overflow: hidden;
@@ -132,7 +135,7 @@
             content: "";
             position: absolute;
             top: 0;
-            right: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
@@ -203,6 +206,7 @@
         /* Sections Common Styles */
         section {
             padding: 5rem 0;
+            scroll-margin-top: 100px; /* Prevent header overlap when scrolling to section */
         }
         
         .section-title {
@@ -220,8 +224,8 @@
             height: 4px;
             background: linear-gradient(90deg, var(--primary-blue), var(--primary-gold));
             bottom: -15px;
-            right: 50%;
-            transform: translateX(50%);
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
         }
         
@@ -310,7 +314,7 @@
         .work-overlay {
             position: absolute;
             top: 0;
-            right: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, transparent, rgba(10, 51, 103, 0.8));
@@ -385,106 +389,6 @@
         
         .stat-item p {
             font-weight: 600;
-        }
-        
-        /* Testimonials Section - Improved */
-        .testimonials {
-            background-color: #f8fafc;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .testimonials::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: 0;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            position: relative;
-            transition: var(--transition);
-            border-left: 4px solid var(--primary-gold);
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
-        
-        .quote-icon {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 3rem;
-            color: var(--primary-gold);
-            opacity: 0.2;
-        }
-        
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .rating {
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .testimonial-text {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            line-height: 1.8;
-            position: relative;
-        }
-        
-        .client-info {
-            display: flex;
-            align-items: center;
-        }
-        
-        .avatar {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
-            border-radius: 50%;
-            margin-left: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            font-size: 1.5rem;
-        }
-        
-        .client-details h4 {
-            margin-bottom: 0.2rem;
-            color: var(--primary-blue);
-        }
-        
-        .client-details p {
-            color: #718096;
-            font-size: 0.9rem;
         }
         
         /* FAQ Section */
@@ -628,6 +532,10 @@
         
         /* Responsive Styles */
         @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
             .nav-menu {
                 display: none;
                 position: absolute;
@@ -650,8 +558,7 @@
             }
             
             .hero {
-                padding-top: 7rem;
-                padding-bottom: 3rem;
+                padding: 5rem 0 3rem;
             }
             
             .hero h1 {
@@ -681,10 +588,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .footer-container {
                 flex-direction: column;
                 align-items: center;
@@ -699,12 +602,13 @@
                 font-size: 0.9rem;
             }
             
-            .service-card, .work-card, .testimonial-card {
+            .service-card, .work-card {
                 padding: 1.5rem;
             }
             
             section {
                 padding: 3rem 0;
+                scroll-margin-top: 80px;
             }
         }
         
@@ -736,15 +640,14 @@
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
-            <img src="https://raw.githubusercontent.com/akrammoumen/Website/main/mobek_agency.png" alt="MOBEK MEDIA - وكالة متخصصة في إعلانات Meta للتأثيث المنزلي وتجهيز المطابخ" class="logo">
+            <img src="https://raw.githubusercontent.com/akrammoumen/Website/main/mobek_agency.png" alt="MOBEK MEDIA - Meta Ads Specialist for Home Furniture & Kitchen Businesses" class="logo">
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#services">الخدمات</a></li>
-                    <li><a href="#work">نجاحاتنا</a></li>
-                    <li><a href="#testimonials">آراء العملاء</a></li>
-                    <li><a href="#faq">الأسئلة الشائعة</a></li>
-                    <li><a href="#about">من نحن</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#work">Our Work</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-btn">☰</button>
             </nav>
@@ -754,11 +657,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1 class="fade-in">نحوّل إعلانات <span class="blue-text">Meta</span> إلى محركات نمو <span class="gold-text">للتأثيث المنزلي وتجهيز المطابخ</span></h1>
-            <p class="fade-in delay-1">نحن نخصص كل جهودنا في وكالتنا لتحقيق أقصى استفادة من إعلانات فيسبوك وإنستجرام لتحقيق نمو مستدام لأعمال التأثيث المنزلي وتجهيز المطابخ</p>
+            <h1 class="fade-in">Transform <span class="blue-text">Meta Ads</span> into Growth Engines for <span class="gold-text">Home Furniture & Kitchen Businesses</span></h1>
+            <p class="fade-in delay-1">We specialize in maximizing the potential of Facebook and Instagram ads to drive sustainable growth for your home furniture and kitchen business</p>
             <div class="hero-buttons fade-in delay-2">
-                <a href="mailto:hello@mobekmedia.com" class="btn btn-primary">اطلب استراتيجية مجانية</a>
-                <a href="#work" class="btn btn-secondary">شاهد نجاحاتنا</a>
+                <a href="mailto:hello@mobekmedia.com" class="btn btn-primary">Get Free Strategy</a>
+                <a href="#work" class="btn btn-secondary">See Our Work</a>
             </div>
         </div>
     </section>
@@ -769,19 +672,19 @@
             <div class="stats-grid">
                 <div class="stat-item fade-in">
                     <h3>+75</h3>
-                    <p>عميل في قطاع التأثيث</p>
+                    <p>Clients in Furniture Industry</p>
                 </div>
                 <div class="stat-item fade-in delay-1">
                     <h3>+240%</h3>
-                    <p>متوسط زيادة المبيعات</p>
+                    <p>Average Sales Increase</p>
                 </div>
                 <div class="stat-item fade-in delay-2">
                     <h3>5</h3>
-                    <p>سنوات من الخبرة</p>
+                    <p>Years of Experience</p>
                 </div>
                 <div class="stat-item fade-in delay-3">
                     <h3>100%</h3>
-                    <p>تخصص في إعلانات Meta</p>
+                    <p>Focus on Meta Ads</p>
                 </div>
             </div>
         </div>
@@ -790,27 +693,27 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">تركيزنا الكامل على <span class="blue-text">إعلانات ميتا للتأثيث والمطابخ</span></h2>
+            <h2 class="section-title">Our Exclusive Focus on <span class="blue-text">Meta Ads for Furniture & Kitchens</span></h2>
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-icon">📊</div>
-                    <h3>إعلانات مخصصة للتأثيث</h3>
-                    <p>نصنع محتوى إعلاني جذاب يعرض منتجات التأثيث والمطابخ بأفضل صورة، مع التركيز على الجودة والتفاصيل التي تهم العملاء</p>
+                    <h3>Custom Furniture Ads</h3>
+                    <p>We create engaging ad content that showcases your furniture and kitchen products in the best light, focusing on quality and details that matter to customers</p>
                 </div>
                 <div class="service-card fade-in delay-1">
                     <div class="service-icon">🎯</div>
-                    <h3>استهداف محكم للعملاء</h3>
-                    <p>نصل للعملاء المهتمين بالتأثيث المنزلي وتجهيز المطابخ باستخدام أدوات الاستهداف المتقدمة التي توفرها منصة ميتا</p>
+                    <h3>Precise Audience Targeting</h3>
+                    <p>We reach customers interested in home furniture and kitchen setups using advanced targeting tools provided by the Meta platform</p>
                 </div>
                 <div class="service-card fade-in delay-2">
                     <div class="service-icon">🚀</div>
-                    <h3>تحويل الزوار إلى عملاء</h3>
-                    <p>نصمم تجربة مستخدم متكاملة تؤدي إلى زيادة التحويلات وتحقيق أهدافك التسويقية في قطاع التأثيث والمطابخ</p>
+                    <h3>Visitor to Customer Conversion</h3>
+                    <p>We design a complete user experience that increases conversions and achieves your marketing goals in the furniture and kitchen sector</p>
                 </div>
                 <div class="service-card fade-in delay-3">
                     <div class="service-icon">📈</div>
-                    <h3>توسع مدروس ومضمون</h3>
-                    <p>نزيد من ميزانيتك الإعلانية بشكل تدريجي مع الحفاظ على أداء الحملات وكفاءتها لتحقيق أقصى عائد على الاستثمار</p>
+                    <h3>Strategic Scaling</h3>
+                    <p>We gradually increase your ad budget while maintaining campaign performance and efficiency to maximize return on investment</p>
                 </div>
             </div>
         </div>
@@ -819,26 +722,26 @@
     <!-- Work Section - Improved -->
     <section id="work" class="work">
         <div class="container">
-            <h2 class="section-title">قصص نجاح <span class="blue-text">ملهمة في قطاع التأثيث</span></h2>
+            <h2 class="section-title">Inspiring Success Stories in the <span class="blue-text">Furniture Industry</span></h2>
             <div class="work-grid">
                 <div class="work-card fade-in">
                     <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
                         <div class="work-overlay">
-                            <h3>أثاث فاخر بلمسة عصرية</h3>
+                            <h3>Luxury Furniture with Modern Touch</h3>
                         </div>
                     </div>
                     <div class="work-content">
-                        <h3>دار الأثاث المتميز</h3>
-                        <p class="work-result">✅ زيادة المبيعات بنسبة 240% خلال 4 أشهر</p>
-                        <p>إستراتيجية إعلانية متكاملة ركزت على استهداف الأسر ذات الدخل المرتفع المهتمة بالأثاث الفاخر والمطابخ المتميزة. استخدمنا صورًا احترافية وفيديوهات 360 درجة لعرض المنتجات.</p>
+                        <h3>Premium Furniture House</h3>
+                        <p class="work-result">✅ 240% Sales Increase in 4 Months</p>
+                        <p>Comprehensive ad strategy focused on targeting high-income families interested in luxury furniture and premium kitchens. We used professional photos and 360-degree videos to showcase products.</p>
                         <div class="work-stats">
                             <div class="stat">
                                 <div class="stat-value">+180%</div>
-                                <div class="stat-label">زيادة في الاستفسارات</div>
+                                <div class="stat-label">Increase in Inquiries</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">35%</div>
-                                <div class="stat-label">انخفاض في تكلفة التحويل</div>
+                                <div class="stat-label">Lower Cost per Conversion</div>
                             </div>
                         </div>
                     </div>
@@ -846,21 +749,21 @@
                 <div class="work-card fade-in delay-1">
                     <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
                         <div class="work-overlay">
-                            <h3>مطابخ بتصميمات مبتكرة</h3>
+                            <h3>Kitchens with Innovative Designs</h3>
                         </div>
                     </div>
                     <div class="work-content">
-                        <h3>مطابخ الأحلام</h3>
-                        <p class="work-result">✅ انخفاض تكلفة التحويل بنسبة 35%</p>
-                        <p>استهداف متطور للعملاء الراغبين في تجديد مطابخهم مع عرض نماذج حقيقية ونماذج ثلاثية الأبعاد لجذب الانتباه. ركزنا على عرض التحولات قبل وبعد لزيادة الثقة.</p>
+                        <h3>Dream Kitchens Co.</h3>
+                        <p class="work-result">✅ 35% Lower Conversion Cost</p>
+                        <p>Advanced targeting of customers looking to renovate their kitchens with real models and 3D displays to attract attention. We focused on showing before-and-after transformations to build trust.</p>
                         <div class="work-stats">
                             <div class="stat">
                                 <div class="stat-value">+150%</div>
-                                <div class="stat-label">زيادة في الزيارات</div>
+                                <div class="stat-label">Increase in Website Visits</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">42%</div>
-                                <div class="stat-label">زيادة في التفاعل</div>
+                                <div class="stat-label">Higher Engagement Rate</div>
                             </div>
                         </div>
                     </div>
@@ -868,74 +771,21 @@
                 <div class="work-card fade-in delay-2">
                     <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
                         <div class="work-overlay">
-                            <h3>مفروشات بتصاميم عصرية</h3>
+                            <h3>Modern Design Furnishings</h3>
                         </div>
                     </div>
                     <div class="work-content">
-                        <h3>بيت الراحة</h3>
-                        <p class="work-result">✅ تحقيق 500 عملية بيع في أول شهرين</p>
-                        <p>حملة إعلانية مكثفة لعرض تشكيلة الموسم مع استراتيجية إعادة استهداف للعملاء المهتمين بمفروشات المنازل الجديدة. استخدمنا تقنية "Lookalike Audiences" للوصول إلى عملاء جدد مشابهين للعملاء الحاليين.</p>
+                        <h3>Comfort Home</h3>
+                        <p class="work-result">✅ 500 Sales in First 2 Months</p>
+                        <p>Intensive ad campaign to showcase seasonal collections with retargeting strategy for customers interested in new home furnishings. We used "Lookalike Audiences" technology to reach new customers similar to existing ones.</p>
                         <div class="work-stats">
                             <div class="stat">
                                 <div class="stat-value">3x</div>
-                                <div class="stat-label">زيادة في قيمة الطلب</div>
+                                <div class="stat-label">Higher Order Value</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">68%</div>
-                                <div class="stat-label">عملاء متكررين</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section - Improved -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">ثقة عملائنا <span class="blue-text">هي شهادتنا الحقيقية</span></h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="quote-icon">"</div>
-                    <div class="testimonial-content">
-                        <div class="rating">★★★★★</div>
-                        <p class="testimonial-text">لقد غيرت MOBEK MEDIA مسار عملي بالكامل. من خلال إستراتيجيتهم المبتكرة في إعلانات فيسبوك، استطعت زيادة مبيعات متجر الأثاث الخاص بي بنسبة 200% خلال 3 أشهر فقط. فريق محترف يفهم احتياجات قطاع التأثيث بشكل ممتاز.</p>
-                        <div class="client-info">
-                            <div class="avatar">م</div>
-                            <div class="client-details">
-                                <h4>محمد السعدي</h4>
-                                <p>مالك متجر أثاث فاخر - الرياض</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card fade-in delay-1">
-                    <div class="quote-icon">"</div>
-                    <div class="testimonial-content">
-                        <div class="rating">★★★★★</div>
-                        <p class="testimonial-text">كنت أبحث عن وكالة متخصصة في التسويق لشركة تجهيز مطابخ ولم أجد أفضل من MOBEK MEDIA. انخفضت تكلفة التحويل بنسبة 35% وزادت الاستفسارات بنسبة 150%. ما يميزهم هو فهمهم العميق لسلوك العملاء في قطاع المطابخ.</p>
-                        <div class="client-info">
-                            <div class="avatar">س</div>
-                            <div class="client-details">
-                                <h4>سارة العبدالله</h4>
-                                <p>مديرة تسويق في شركة مطابخ - جدة</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card fade-in delay-2">
-                    <div class="quote-icon">"</div>
-                    <div class="testimonial-content">
-                        <div class="rating">★★★★☆</div>
-                        <p class="testimonial-text">فريق MOBEK MEDIA محترف جداً ويتابع الحملات بشكل يومي. حققنا أكثر من 500 عملية بيع لمنتجاتنا المنزلية خلال شهرين فقط بفضل استراتيجيتهم المميزة. أنصح أي صاحب عمل في قطاع التأثيث بالتعامل معهم.</p>
-                        <div class="client-info">
-                            <div class="avatar">ع</div>
-                            <div class="client-details">
-                                <h4>علي محمد</h4>
-                                <p>مالك علامة تجارية للمفروشات - الدمام</p>
+                                <div class="stat-label">Repeat Customers</div>
                             </div>
                         </div>
                     </div>
@@ -947,33 +797,33 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">أسئلة <span class="blue-text">شائعة</span></h2>
+            <h2 class="section-title">Frequently Asked <span class="blue-text">Questions</span></h2>
             <div class="faq-container">
                 <div class="faq-item fade-in">
                     <div class="faq-question">
-                        <span>كم يستغرق من الوقت لرؤية النتائج الأولية في قطاع التأثيث؟</span>
+                        <span>How long does it take to see initial results in the furniture sector?</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>عادةً ما نرى نتائج أولية خلال 2-4 أسابيع، لكن في قطاع التأثيث والمطابخ قد نلاحظ استفسارات مبكرة بسبب الطبيعة الموسمية لهذا القطاع. نعمل على تحسين الحملات باستمرار لتحقيق أفضل النتائج.</p>
+                        <p>We typically see initial results within 2-4 weeks, but in the furniture and kitchen sector, we may notice early inquiries due to the seasonal nature of this industry. We continuously optimize campaigns to achieve the best results.</p>
                     </div>
                 </div>
                 <div class="faq-item fade-in delay-1">
                     <div class="faq-question">
-                        <span>هل أحتاج إلى ميزانية كبيرة للبدء مع MOBEK MEDIA في مجال التأثيث؟</span>
+                        <span>Do I need a large budget to start with MOBEK MEDIA in the furniture field?</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>نعمل مع ميزانيات مختلفة بدءًا من 1000 دولار شهريًا للإعلانات. نناقش أهدافك ونقترح الميزانية المناسبة لتحقيقها في قطاع التأثيث والمطابخ. نركز على تحقيق أفضل عائد على الاستثمار بغض النظر عن حجم الميزانية.</p>
+                        <p>We work with different budgets starting from $1000 monthly for ads. We discuss your goals and suggest the appropriate budget to achieve them in the furniture and kitchen sector. We focus on achieving the best return on investment regardless of budget size.</p>
                     </div>
                 </div>
                 <div class="faq-item fade-in delay-2">
                     <div class="faq-question">
-                        <span>ما الذي يميزكم في تسويق منتجات التأثيث والمطابخ تحديداً؟</span>
+                        <span>What makes you different in marketing furniture and kitchen products specifically?</span>
                         <span>+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>نمتلك خبرة متخصصة في فهم سلوك العملاء المهتمين بالتأثيث المنزلي وتجهيز المطابخ، ونعرف كيفية عرض المنتجات بشكل يجذب انتباههم ويحفزهم على الشراء. نستخدم تقنيات متقدمة في التصوير والعرض لتسليط الضوء على مزايا منتجاتك.</p>
+                        <p>We have specialized expertise in understanding the behavior of customers interested in home furniture and kitchen setups, and we know how to display products in a way that attracts their attention and motivates them to purchase. We use advanced photography and display techniques to highlight the advantages of your products.</p>
                     </div>
                 </div>
             </div>
@@ -983,9 +833,9 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container about-content">
-            <h2 class="section-title">من نحن في <span class="blue-text">MOBEK MEDIA</span></h2>
-            <p class="fade-in">نحن فريق متخصص في تسويق قطاع التأثيث المنزلي وتجهيز المطابخ عبر إعلانات Meta. نؤمن بأن التخصص هو مفتاح التميز، ولهذا ركزنا جهودنا على هذا القطاع المهم.</p>
-            <p class="fade-in delay-1">نهجنا يعتمد على فهم عميق لسلوك العملاء في قطاع التأثيث، والاستفادة من البيانات والاختبار المستمر لتحقيق أفضل النتائج لعملائنا. نحن نعرف كيف نعرض منتجاتك بشكل يجذب انتباه العملاء المحتملين.</p>
+            <h2 class="section-title">About <span class="blue-text">MOBEK MEDIA</span></h2>
+            <p class="fade-in">We are a team specialized in marketing the home furniture and kitchen sector through Meta Ads. We believe that specialization is the key to excellence, which is why we have focused our efforts on this important sector.</p>
+            <p class="fade-in delay-1">Our approach is based on a deep understanding of customer behavior in the furniture sector, leveraging data and continuous testing to achieve the best results for our clients. We know how to display your products in a way that attracts the attention of potential customers.</p>
         </div>
     </section>
 
@@ -994,24 +844,24 @@
         <div class="container">
             <div class="footer-container">
                 <div>
-                    <img src="https://raw.githubusercontent.com/akrammoumen/Website/main/mobek_agency.png" alt="MOBEK MEDIA - وكالة متخصصة في إعلانات Meta للتأثيث المنزلي وتجهيز المطابخ" class="footer-logo">
-                    <p>نحوّل إعلانات Meta إلى محركات نمو لقطاع التأثيث والمطابخ</p>
+                    <img src="https://raw.githubusercontent.com/akrammoumen/Website/main/mobek_agency.png" alt="MOBEK MEDIA - Meta Ads Specialist for Home Furniture & Kitchen Businesses" class="footer-logo">
+                    <p>Transforming Meta Ads into growth engines for the furniture and kitchen sector</p>
                 </div>
                 <div class="footer-contact">
-                    <p class="gold-text">تواصل معنا</p>
+                    <p class="gold-text">Contact Us</p>
                     <a href="mailto:hello@mobekmedia.com">hello@mobekmedia.com</a>
                     <p style="margin-top: 0.5rem;">+966 123 456 789</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2023 MOBEK MEDIA. جميع الحقوق محفوظة.</p>
+                <p>© 2023 MOBEK MEDIA. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Floating CTA -->
     <a href="https://wa.me/966123456789" class="floating-cta">
-        <span class="whatsapp-icon">📱</span> اتصل بنا
+        <span class="whatsapp-icon">📱</span> Contact Us
     </a>
 
     <script>
@@ -1072,17 +922,38 @@
             });
         });
         
+        // Smooth scroll to sections with header offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
         // Structured Data for SEO
         const structuredData = {
             "@context": "https://schema.org",
             "@type": "MarketingAgency",
             "name": "MOBEK MEDIA",
-            "description": "وكالة تسويق رقمية متخصصة في إعلانات Meta (فيسبوك وإنستجرام) لقطاع التأثيث المنزلي وتجهيز المطابخ",
+            "description": "Digital marketing agency specialized in Meta Ads (Facebook and Instagram) for home furniture and kitchen businesses",
             "url": "https://mobekmedia.com",
             "telephone": "+966-123-456-789",
             "email": "hello@mobekmedia.com",
-            "areaServed": "السعودية والوطن العربي",
-            "serviceType": "تسويق إلكتروني، إعلانات فيسبوك، إعلانات انستجرام",
+            "areaServed": "Saudi Arabia and Arab world",
+            "serviceType": "Digital marketing, Facebook ads, Instagram ads",
             "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "SA"
